@@ -20,7 +20,7 @@
 //
 //      [However, to avoid banned or blocking, should send spam chat amount not excessive.]
 //
-//      Update : 10-05-2021 by:Bukharyay
+//      Update : 25-06-2022 by:Bukharyay
 
 var repeatingSpamFunction = null;
 var message = '';
@@ -64,16 +64,16 @@ function sendMessage() {
         bubbles: true
     });
 
-    var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]");
+    var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[2]");
     input.innerHTML = message;
     input.dispatchEvent(evt);
 
-    getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div[3]/button").click();
+    getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button").click();
 }
 
 function doSpam(element) {
     if (element.innerHTML == 'SPAM') {
-        var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]");
+        var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[2]");
         if (input.innerHTML == '' || input.innerHTML == null) {
             window.alert('Please Enter a Text to be spammed before using the spam button.');
             return;
@@ -93,7 +93,7 @@ function doSpam(element) {
 
 function editSpamButton() {
     var spamButton = document.getElementById('spamButton');
-    var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]");
+    var input = getElementByXpath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[2]");
     if (input.innerHTML == '' || input.innerHTML == null) {
         spamButton.style.cursor = 'not-allowed';
         spamButton.style.backgroundColor = '#343a40';
